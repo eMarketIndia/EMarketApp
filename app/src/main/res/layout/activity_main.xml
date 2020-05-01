@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFF"
+    android:background="#f9d563"
     tools:context=".MainActivity">
 
     <ImageView
@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.082"
-        app:srcCompat="@drawable/emarket_logo" />
+        app:srcCompat="@drawable/Logo" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="360dp"
@@ -37,10 +37,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="78dp"
+            android:autofillHints=""
             android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="@string/MobileNumber"
-            android:inputType="textPersonName" />
+            android:inputType="number|textAutoCorrect" />
 
         <EditText
             android:id="@+id/password"
