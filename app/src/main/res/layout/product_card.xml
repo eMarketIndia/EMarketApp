@@ -4,24 +4,68 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
         android:elevation="50dp"
         android:layout_margin="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/product_name"
-            android:textSize="18sp"
-            android:textColor="@color/colorPrimaryDark"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/productName"
-            android:text="@string/no_product_name"
-            android:textColor="#000"
-            android:textSize="18sp"
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp" />
+        <LinearLayout
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/productImage" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="190dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="170dp"
+            android:layout_marginLeft="170dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/productName"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="24sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/productCat"
+                android:layout_marginTop="5dp"
+                android:textSize="24sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:layout_marginTop="20dp"
+                    android:text="Quantity :"
+                    android:textSize="20sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/productQty"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/productPrice"
+                android:textColor="#f51505"
+                android:textSize="18sp" />
+
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 </FrameLayout>

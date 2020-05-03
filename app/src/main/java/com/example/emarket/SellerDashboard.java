@@ -37,7 +37,6 @@ public class SellerDashboard extends AppCompatActivity {
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        System.out.println("Seller DashBoard");
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -48,7 +47,7 @@ public class SellerDashboard extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        Toast.makeText(getApplicationContext(),"Logged In as Seller",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"Hey "+User.getUserName()+" you Logged In as Seller",Toast.LENGTH_LONG).show();
     }
 
     @Override

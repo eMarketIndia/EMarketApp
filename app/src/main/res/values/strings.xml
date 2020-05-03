@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">EMarket</string>
+    <string name="app_name">eMarket</string>
     <string name="MobileNumber">Mobile Number</string>
     <string name="Password">Password</string>
     <string name="LoginAs">Login As</string>
-    <string name="RegisterHere">If you have not registered with us. Click here to Register.</string>
+    <string name="RegisterHere">New User Click here to Register.</string>
     <string name="title_activity_seller_dashboard">SellerDashboard</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -26,4 +26,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="product_name">Product Name</string>
     <string name="no_product_name">No Product Name</string>
+    <string name="add_product_verbies">Add Products by Clicking + icon</string>
+    <string name="title_activity_registration">RegistrationActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="SignUp">eMarket Sign Up</string>
 </resources>
