@@ -3,6 +3,7 @@ package com.example.emarket;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -45,6 +46,8 @@ public class SellerDashboard extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        Toast.makeText(getApplicationContext(),"Hey "+User.getUserName()+" you Logged In as Seller",Toast.LENGTH_LONG).show();
     }
 
     @Override

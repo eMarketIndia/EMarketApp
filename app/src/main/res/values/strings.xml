@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">EMarket</string>
+    <string name="app_name">eMarket</string>
     <string name="MobileNumber">Mobile Number</string>
     <string name="Password">Password</string>
     <string name="LoginAs">Login As</string>
-    <string name="RegisterHere">If you have not registered with us. Click here to Register.</string>
+    <string name="RegisterHere">New User Click here to Register.</string>
     <string name="title_activity_seller_dashboard">SellerDashboard</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -12,9 +12,23 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home">Products</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="home_second">Home Second</string>
+    <string name="MyProducts">My Products</string>
+    <string name="products_summary">Products Summary</string>
+    <string name="total_number_of_products">Total Number of Products</string>
+    <string name="Search">Search Your Product</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="product_name">Product Name</string>
+    <string name="no_product_name">No Product Name</string>
+    <string name="add_product_verbies">Add Products by Clicking + icon</string>
+    <string name="title_activity_registration">RegistrationActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="SignUp">eMarket Sign Up</string>
 </resources>
