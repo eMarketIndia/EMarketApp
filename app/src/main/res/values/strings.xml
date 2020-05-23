@@ -28,7 +28,29 @@
     <string name="no_product_name">No Product Name</string>
     <string name="add_product_verbies">Add Products by Clicking + icon</string>
     <string name="title_activity_registration">RegistrationActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_1">Personal Info</string>
+    <string name="tab_text_2">Contact Info</string>
+    <string name="tab_text_3">Account Info</string>
     <string name="SignUp">eMarket Sign Up</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="name_label">What\'s your Name?</string>
+    <string name="enter_name_hint">Enter your Full Name</string>
+    <string name="location">Where you Live?</string>
+    <string name="select_state">Select State</string>
+    <string name="select_district">Select District</string>
+    <string name="contact_label">How People can contact you?</string>
+    <string name="eMail">Email Id (Optional)</string>
+    <string name="cancel">Cancel</string>
+    <string name="password_title">Almost Done !</string>
+    <string name="registration_password_label">Set a Strong Password for your account</string>
+    <string name="register">Register</string>
+    <string name="third_fragment_label">Third Fragment</string>
+    <string name="cnfPassword">Confirm Password</string>
 </resources>
