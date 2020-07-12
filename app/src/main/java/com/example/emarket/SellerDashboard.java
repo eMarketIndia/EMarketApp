@@ -1,10 +1,15 @@
 package com.example.emarket;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -13,6 +18,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.emarket.Loader.LoaderDialog;
+import com.example.emarket.Utils.SavedPreference;
 import com.example.emarket.Utils.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -21,6 +28,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class SellerDashboard extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    private MenuItem logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +36,10 @@ public class SellerDashboard extends AppCompatActivity {
         setContentView(R.layout.activity_seller_dashboard);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        System.out.println(navigationView.getHeaderCount());
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -48,6 +50,8 @@ public class SellerDashboard extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        TextView userName = (TextView) headerView.findViewById(R.id.profileName);
+        userName.setText(User.getUserName().toUpperCase());
         Toast.makeText(getApplicationContext(), "Hey " + User.getUserName() + " you Logged In as Seller", Toast.LENGTH_LONG).show();
     }
 
@@ -63,5 +67,21 @@ public class SellerDashboard extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_logout:
+                Toast.makeText(this,"Logging Out",Toast.LENGTH_SHORT).show();
+                logoutEMarket();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void logoutEMarket(){
+        SavedPreference.setLoggedInStatus(this,false,"","");
+        startActivity(new Intent(SellerDashboard.this,LoginActivity.class));
     }
 }

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="8dp"
+            android:layout_marginStart="80dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="130dp"
+                    android:id="@+id/profile_home_user_image"
+                    android:src="@drawable/buyer"
+                    android:layout_margin="15dp"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="5dp">
+                    <EditText
+                        android:layout_width="190dp"
+                        android:layout_height="50dp"
+                        android:enabled="false"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:id="@+id/profile_home_username"
+                        android:text="@string/default_username"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center_horizontal" />
+                    <ImageButton
+                        android:layout_width="30dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/edit_name"
+                        android:src="@drawable/ic_baseline_edit"
+                        android:background="@color/fontWhite" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/MobileNumber"
+                    android:textSize="18sp" />
+                <EditText
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:textSize="20dp"
+                    android:id="@+id/profile_home_mobileNumber"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/eMail"
+                    android:textSize="18sp" />
+                <EditText
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:textSize="20dp"
+                    android:id="@+id/profile_home_eMail"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date of Birth"
+                    android:textSize="18sp" />
+                <EditText
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/profile_home_dob"
+                    android:textSize="20sp"
+                    android:hint="MM/DD/YYYY"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="20dp">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textSize="16sp"
+                android:background="@color/colorAccent"
+                android:padding="10dp"
+                android:textColor="@color/fontWhite"
+                android:id="@+id/profile_home_discard"
+                android:text="@string/discard_changes" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:background="@color/colorPrimary"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/fontWhite"
+                android:id="@+id/profile_home_save"
+                android:text="@string/save_changes"
+                android:textSize="16sp"
+                android:layout_marginStart="60dp" />
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

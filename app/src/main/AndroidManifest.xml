@@ -13,6 +13,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".profilepage.ProfileActivity"
+            android:label="@string/title_activity_profile"></activity>
+        <activity
             android:name=".RegistrationActivity"
             android:label="@string/title_activity_registration"
             android:noHistory="true"
@@ -25,6 +28,7 @@
         <activity
             android:name=".SellerDashboard"
             android:label="@string/title_activity_seller_dashboard"
+            android:noHistory="true"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"

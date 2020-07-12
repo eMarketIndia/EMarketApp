@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "721089942169",
+    "firebase_url": "https://emarket-2020.firebaseio.com",
+    "project_id": "emarket-2020",
+    "storage_bucket": "emarket-2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721089942169:android:392e9471e16f86e2dede08",
+        "android_client_info": {
+          "package_name": "com.example.emarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721089942169-v6ve1itngl20i84o0djd9gr8hhkqdfrq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.emarket",
+            "certificate_hash": "658877c37d45432bd6685050f01180355899609f"
+          }
+        },
+        {
+          "client_id": "721089942169-hrjpj1j656ft439rcgle4ej4is2c46hh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3XF-A-MEF_U9c6FPAmYnvo9-Dc2tp_iU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721089942169-hrjpj1j656ft439rcgle4ej4is2c46hh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

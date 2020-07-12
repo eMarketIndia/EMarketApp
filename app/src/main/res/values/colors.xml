@@ -10,4 +10,6 @@
     <color name="fontRed">#d60404</color>
     <color name="errorBG">#f7a283</color>
     <color name="lightBlueBG">#bbd3fa</color>
+    <color name="success">#32d15d</color>
+    <color name="btnBlue">#4a56d4</color>
 </resources>

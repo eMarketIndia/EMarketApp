@@ -22,8 +22,21 @@
         tools:layout="@layout/registration_contact">
 
         <action
-            android:id="@+id/action_contact_to_password"
+            android:id="@+id/action_contact_to_otp_verification"
+            app:destination="@id/otpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpFragment"
+        android:name="com.example.emarket.OtpVerification"
+        android:label="@string/otp_fragment"
+        tools:layout="@layout/fragment_otp_verification">
+
+        <action
+            android:id="@+id/action_verify_otp_to_password"
             app:destination="@id/ThirdFragment" />
+        <action
+            android:id="@+id/action_back_to_contact"
+            app:destination="@id/SecondFragment" />
     </fragment>
     <fragment
         android:id="@+id/ThirdFragment"

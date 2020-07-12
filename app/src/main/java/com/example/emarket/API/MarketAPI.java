@@ -10,17 +10,20 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.emarket.Loader.LoaderDialog;
 import com.example.emarket.LoginActivity;
 import com.example.emarket.Utils.User;
+import com.example.emarket.ui.profile.ProfileViewModel;
 import com.google.gson.JsonObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MarketAPI {
-
-    private String LOGIN_API = "http://192.168.43.31:8085/market/v1/login";
-    private String REGISTER_API = "http://192.168.43.31:8085/market/v1/userRegisteration";
+    private final String IP_PORT ="http://192.168.225.233:8085/market/v1/";
+    private String LOGIN_API = IP_PORT+"login";
+    private String REGISTER_API = IP_PORT+"userRegisteration";
+    private String PINCODE_API = "http://postalpincode.in/api/pincode/";
     private Context ctx;
 
     public MarketAPI(Context ctx) {
@@ -44,12 +47,14 @@ public class MarketAPI {
                             new LoginActivity().navigateToDashboard(loginMsg[0],ctx);
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            LoaderDialog.hideLoader();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        LoaderDialog.hideLoader();
                         Log.e("Login API Error",error.toString());
                         Toast.makeText(ctx,"Something went wrong Try Again",Toast.LENGTH_SHORT).show();
                     }
@@ -69,8 +74,7 @@ public class MarketAPI {
         registerBody.addProperty("password", User.UserRegistration.getPassword());
         registerBody.addProperty("emailId", User.UserRegistration.getEmailId());
         RequestQueue registerRequest = Volley.newRequestQueue(this.ctx);
-        System.out.println(registerBody.toString());
-        Toast.makeText(ctx, registerBody.toString(), Toast.LENGTH_SHORT).show();
+        Log.d("Register API Response","Registration API Calling");
         JsonObjectRequest registerObjectRequest = new JsonObjectRequest(
                 Request.Method.POST, REGISTER_API, new JSONObject(String.valueOf(registerBody)),
                 new Response.Listener<JSONObject>() {
@@ -94,5 +98,30 @@ public class MarketAPI {
                 }
         );
         registerRequest.add(registerObjectRequest);
+    }
+
+    public void getStateUsingPincode() throws Exception {
+        String API_URL = PINCODE_API+ ProfileViewModel.getPinCode();
+        System.out.println(API_URL);
+        JsonObject jsonObject = new JsonObject();
+        RequestQueue requestQueue = Volley.newRequestQueue(this.ctx);
+        JsonObjectRequest objectRequest = new JsonObjectRequest(
+                Request.Method.GET, API_URL, new JSONObject(String.valueOf(jsonObject)),
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.e("PINCODE API", response.toString());
+                        System.out.println(response);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("PINCODE API","Error Occured : "+error.toString());
+                        System.out.println(error.toString());
+                    }
+                }
+        );
+        requestQueue.add(objectRequest);
     }
 }

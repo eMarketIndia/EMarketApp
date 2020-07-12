@@ -109,5 +109,7 @@ public final class Constants {
         return states;
     }
 
-
+    public static String EMAIL_SEND = "Verification Link send to your Email";
+    public static String EMAIL_NOT_VERIFIED = "Email Not Verified yet";
+    public static String ERR_IN_SEND_EMAIL = "Unable to Send Verification Email to you. Please verify your eMail from your Profile Section after Logging In";
 }

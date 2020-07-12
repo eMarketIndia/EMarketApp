@@ -17,6 +17,7 @@ import com.example.emarket.API.MarketAPI;
 import com.example.emarket.Utils.SavedPreference;
 import com.example.emarket.Utils.User;
 import com.example.emarket.Utils.Validators;
+import com.example.emarket.Loader.LoaderDialog;
 
 import org.json.JSONException;
 
@@ -50,9 +51,11 @@ public class LoginActivity extends AppCompatActivity {
             navigateToDashboard("Welcome " + User.getUserName(), LoginActivity.this);
         }
 
+
         SellerLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                LoaderDialog.showLoader(LoginActivity.this);
                 String userId = UserId.getText().toString(), password = Password.getText().toString();
                 if(validateFields(userId,password)){
                     try {
@@ -112,5 +115,13 @@ public class LoginActivity extends AppCompatActivity {
             ErrorLabel.setText(responseMessage);
             Toast.makeText(ctx,responseMessage,Toast.LENGTH_SHORT).show();
         }
+        if(User.getLoaderState()){
+            LoaderDialog.hideLoader();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }
