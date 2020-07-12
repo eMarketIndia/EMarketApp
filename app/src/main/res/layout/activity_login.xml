@@ -4,8 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:id="@+id/loginForm"
     tools:context=".MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.004">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/colorAccent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorPrimary" />
+    </androidx.cardview.widget.CardView>
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -15,14 +38,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049"
+        app:layout_constraintVertical_bias="0.133"
         app:srcCompat="@drawable/logo" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="360dp"
-        android:layout_height="254dp"
+        android:layout_height="300dp"
         android:textAlignment="gravity"
+        app:cardBackgroundColor="@color/colorAccent"
         app:cardCornerRadius="5dp"
         app:cardElevation="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,73 +56,131 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.08">
 
-        <EditText
-            android:id="@+id/userId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="78dp"
-            android:layout_marginTop="10dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/MobileNumber"
-            android:inputType="number|textAutoCorrect" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="78dp"
-            android:layout_marginTop="80dp"
-            android:ems="10"
-            android:hint="@string/Password"
-            android:inputType="textPassword" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/colorPrimary">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="140dp"
-            android:text="@string/LoginAs"
-            android:textAllCaps="true"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="20dp" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
 
-        <Button
-            android:id="@+id/sellerLogin"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="180dp"
-            android:background="@color/colorPrimary"
-            android:text="Seller"
-            android:textAllCaps="true"
-            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
-            android:textColor="#FFFF" />
+                    <TextView
+                        android:id="@+id/errorLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/errorBG"
+                        android:gravity="center_horizontal"
+                        android:textAlignment="center"
+                        android:textColor="@color/fontRed"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
 
-        <Button
-            android:id="@+id/buyerLogin"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="180dp"
-            android:background="@color/colorPrimary"
-            android:text="Buyer"
-            android:textAllCaps="true"
-            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
-            android:textColor="#FFFF" />
+                    <EditText
+                        android:id="@+id/userId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="48dp"
+                        android:layout_marginTop="30dp"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:hint="@string/MobileNumber"
+                        android:inputType="number|textAutoCorrect" />
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="48dp"
+                        android:layout_marginTop="100dp"
+                        android:ems="10"
+                        android:hint="@string/Password"
+                        android:inputType="textPassword" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="110dp"
+                        android:layout_marginTop="160dp"
+                        android:text="@string/LoginAs"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/sellerLogin"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="200dp"
+                        android:background="@color/colorPrimary"
+                        android:text="Seller"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+                        android:textColor="#FFFF" />
+
+                    <Button
+                        android:id="@+id/buyerLogin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="210dp"
+                        android:layout_marginTop="200dp"
+                        android:background="@color/colorPrimary"
+                        android:text="Buyer"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+                        android:textColor="#FFFF" />
+                </androidx.cardview.widget.CardView>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.cardview.widget.CardView>
+
+
     </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/registerLink"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:text="@string/RegisterHere"
-        android:textColor="#0a51a8"
-        android:textSize="15dp"
+        android:textAlignment="center"
+        android:textColor="@color/fontBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2"
+        android:textSize="18sp"
         app:layout_constraintVertical_bias="0.122" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.995">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/colorPrimary" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorAccent" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
